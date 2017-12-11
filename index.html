@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Study Guide</title>
+    <link href="design.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>{{ title }}</h1>
+      <h3>How to Use this Guide:</h3>
+      <p>{{ description }}</p>
+      <h3>My First Method</h3>
+      <p>{{welcome(" Look at index and app to see how I put this on the page.")}}</p>
+      <h3>Using 'This'</h3>
+      <p>{{myMethod()}}  Look at index and app to see the method used to write this.</p>
+      <h3>Data Binding</h3>
+      <p>Here's a link to my Github page:
+        <a v-bind:href="myGithub">My Github Page</a>.
+
+        I created this using my app file and linked to it using data binding. Look at the code in this paragraph in index. Don't put the href in curly brackets instead of quotes. It will break your page!
+      </p>
+      <h3>Input Fields</h3>
+      <p>Input fields also use data binding. Look how this input field in index was bound to stuff in app:
+        <input type="text" v-model="name"/>. Try entering text and see what happens. My name is {{name}}. This is different from the link in the previous section because it uses two-way data binding.
+      </p>
+      <h3>Events</h3>
+      <p>You already saw one example of events in the data binding section above. Here's some more on events.
+        <button v-on:click="alert('Look at me in index. Notice my code is only in index but the next buttons code is in both index and app.')">Click Here!</button>
+        <button v-on:click="upVotes++">Add upvotes here!</button>
+        Upvotes: {{upVotes}}, But what if you only want to let a user vote once? Check out how the downvotes button is different in the code and behaves differently on the page.
+        <button v-on:click.once="downVotes++">Add downvotes here!</button>
+          Downvotes: {{downVotes}},
+        Click here for more events: <a v-bind:href="moreEvents"> More Events </a>
+      </p>
+      <h3>Computed Properties</h3>
+      <p>Computed properties are similar to methods. Here's a little bit more about them and what makes them different: </p>
+    </br>
+    </br>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
